@@ -1,0 +1,41 @@
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+backend/.env
+frontend/.env
+
+# Dependencies
+node_modules/
+vendor/
+frontend/node_modules/
+backend/vendor/
+
+# Build & Dist
+dist/
+dist-ssr/
+frontend/dist/
+public/build/
+public/hot/
+
+# Storage & Logs
+*.log
+debug-*.log
+backend/storage/*.key
+backend/storage/logs/*.log
+backend/storage/framework/cache/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+backend/bootstrap/cache/*.php
+
+# SQLite Database
+*.sqlite
+*.sqlite-journal
+backend/database/*.sqlite
+
+# IDE & OS
+.cursor/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

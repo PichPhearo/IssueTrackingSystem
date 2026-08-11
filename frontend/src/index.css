@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   GLOBAL THEME COLOR SYSTEM
+   Edit any theme colors in this single file to customize the whole app!
+   ========================================================================== */
+
+:root {
+  /* --- LIGHT MODE PALETTE --- */
+  --bg-app: #f8fafc;
+  /* Main page background (slate-50) */
+  --bg-sidebar: #ffffff;
+  /* Sidebar background (white) */
+  --bg-surface: #ffffff;
+  /* Card & panel surface (white) */
+  --bg-surface-subtle: #f1f5f9;
+  /* Table headers, subtle blocks (slate-100) */
+  --bg-surface-hover: #f8fafc;
+  /* Row hover, item hover (slate-50) */
+
+  --border-main: #e2e8f0;
+  /* Card & section borders (slate-200) */
+  --border-subtle: #cbd5e1;
+  /* Interactive input/button borders (slate-300) */
+
+  --text-main: #0f172a;
+  /* Headings & primary text (slate-900) */
+  --text-secondary: #334155;
+  /* Body text & descriptions (slate-700) */
+  --text-muted: #64748b;
+  /* Subtitles, labels, metadata (slate-500) */
+  --text-subtle: #94a3b8;
+  /* Icons & secondary hints (slate-400) */
+
+  --input-bg: #ffffff;
+  /* Input & select field background (white) */
+  --input-border: #e2e8f0;
+  /* Input field border (slate-200) */
+  --input-placeholder: #94a3b8;
+  /* Placeholder text color (slate-400) */
+
+  --btn-primary-bg: #0f172a;
+  /* Primary action button (slate-900) */
+  --btn-primary-text: #ffffff;
+  /* Primary action button text */
+  --btn-primary-hover: #1e293b;
+  /* Primary button hover (slate-800) */
+}
+
+.dark {
+  /* --- DARK MODE PALETTE (Soft Slate Dark) --- */
+  --bg-app: #0f172a;
+  /* Main page background (slate-900) */
+  --bg-sidebar: #0f172a;
+  /* Sidebar background (slate-900) */
+  --bg-surface: #1e293b;
+  /* Card & panel surface (slate-800) */
+  --bg-surface-subtle: #1e293b;
+  /* Table headers, subtle blocks (slate-800) */
+  --bg-surface-hover: #334155;
+  /* Row hover, item hover (slate-700) */
+
+  --border-main: #1e293b;
+  /* Card & section borders (slate-800) */
+  --border-subtle: #334155;
+  /* Interactive input/button borders (slate-700) */
+
+  --text-main: #f8fafc;
+  /* Headings & primary text (slate-50) */
+  --text-secondary: #cbd5e1;
+  /* Body text & descriptions (slate-300) */
+  --text-muted: #94a3b8;
+  /* Subtitles, labels, metadata (slate-400) */
+  --text-subtle: #64748b;
+  /* Icons & secondary hints (slate-500) */
+
+  --input-bg: #1e293b;
+  /* Input & select field background (slate-800) */
+  --input-border: #334155;
+  /* Input field border (slate-700) */
+  --input-placeholder: #64748b;
+  /* Placeholder text color (slate-500) */
+
+  --btn-primary-bg: #ffffff;
+  /* Primary action button in dark mode */
+  --btn-primary-text: #0f172a;
+  /* Primary action button text in dark mode */
+  --btn-primary-hover: #e2e8f0;
+  /* Primary button hover in dark mode */
+}
+
+/* Base Body Styles */
+body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Tailwind Theme Token Extensions */
+@theme {
+  --color-theme-bg: var(--bg-app);
+  --color-theme-sidebar: var(--bg-sidebar);
+  --color-theme-surface: var(--bg-surface);
+  --color-theme-surface-subtle: var(--bg-surface-subtle);
+  --color-theme-surface-hover: var(--bg-surface-hover);
+
+  --color-theme-border: var(--border-main);
+  --color-theme-border-subtle: var(--border-subtle);
+
+  --color-theme-text: var(--text-main);
+  --color-theme-text-secondary: var(--text-secondary);
+  --color-theme-text-muted: var(--text-muted);
+  --color-theme-text-subtle: var(--text-subtle);
+
+  --color-theme-input: var(--input-bg);
+  --color-theme-input-border: var(--input-border);
+  --color-theme-placeholder: var(--input-placeholder);
+
+  --color-theme-btn-bg: var(--btn-primary-bg);
+  --color-theme-btn-text: var(--btn-primary-text);
+  --color-theme-btn-hover: var(--btn-primary-hover);
+}
+
+@keyframes smoothMorph {
+  0% {
+    transform: scale(1) rotate(0deg);
+    border-radius: 50%;
+  }
+
+  20% {
+    transform: scale(0.9) rotate(72deg);
+    border-radius: 35%;
+  }
+
+  40% {
+    transform: scale(1.1) rotate(144deg);
+    border-radius: 15%;
+  }
+
+  60% {
+    transform: scale(0.85) rotate(216deg);
+    border-radius: 8%;
+  }
+
+  80% {
+    transform: scale(1.05) rotate(288deg);
+    border-radius: 25%;
+  }
+
+  100% {
+    transform: scale(1) rotate(360deg);
+    border-radius: 50%;
+  }
+}
+
+.morphing-spinner-shape {
+  animation: smoothMorph 3s ease-in-out infinite;
+}
+
+@utility font-tracer {
+  font-family: 'Sekuya', 'Press Start 2P', 'Noto Serif Georgian', serif;
+}
+
+@utility font-sekuya {
+  font-family: 'Sekuya', serif;
+}
+
+@utility font-press-start {
+  font-family: 'Press Start 2P', cursive;
+}
+
+@utility font-noto-georgian {
+  font-family: 'Noto Serif Georgian', serif;
+}
+
+@utility font-noto-khmer {
+  font-family: 'Noto Serif Khmer', serif;
+}
