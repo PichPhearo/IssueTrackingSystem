@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import { useTheme } from '../../context/ThemeContext';
-import { getAllowedTransitions } from '../../utils/permissions';
+import { getAllowedTransitions, canChangeStatus } from '../../utils/permissions';
 import { updateStatus } from '../../api/issues';
 import { MessageSquare, GripVertical } from 'lucide-react';
 
@@ -112,9 +112,9 @@ export default function KanbanBoard({ issues, loading, onStatusChange }) {
       return;
     }
 
-    // Only allow dragging if the issue is assigned to the current user
-    if (draggedIssue.assigned_to !== user?.id) {
-      showToast('You can only move issues that are assigned to you.');
+    // Check if user has permission to move this issue
+    if (!canChangeStatus(user, draggedIssue)) {
+      showToast('You do not have permission to move this issue.');
       setDraggedIssue(null);
       return;
     }
@@ -283,8 +283,7 @@ export default function KanbanBoard({ issues, loading, onStatusChange }) {
 function KanbanCard({ issue, isDark, isUpdating, onDragStart, onDragEnd, onClick }) {
   const { user } = useAuth();
   const priorityInfo = PRIORITY_CONFIG[issue.priority] || PRIORITY_CONFIG.low;
-  const isAssignedToMe = issue.assigned_to === user?.id;
-  const canDrag = isAssignedToMe && !isUpdating;
+  const canDrag = canChangeStatus(user, issue) && !isUpdating;
 
   return (
     <div
@@ -300,8 +299,8 @@ function KanbanCard({ issue, isDark, isUpdating, onDragStart, onDragEnd, onClick
           : 'bg-white border-slate-200 hover:border-slate-300 hover:shadow-sm'
       }`}
     >
-      {/* Drag Handle (visible on hover only if assigned to current user) */}
-      {isAssignedToMe && (
+      {/* Drag Handle (visible on hover for any issue the user can drag) */}
+      {canDrag && (
         <div
           className={`absolute top-2.5 right-2 opacity-0 group-hover:opacity-60 transition-opacity ${
             isDark ? 'text-slate-500' : 'text-slate-400'
