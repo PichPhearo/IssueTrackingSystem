@@ -1,11 +1,20 @@
 # 🚀 IssueFlow — Full-Stack Issue & Project Management System
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-black?style=for-the-badge&logo=vercel)](https://your-app.vercel.app)
-[![API Docs](https://img.shields.io/badge/API_Status-Online-brightgreen?style=for-the-badge&logo=render)](https://your-backend.onrender.com)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-black?style=for-the-badge&logo=vercel)](https://issue-tracking-system-alpha.vercel.app/)
+[![API Status](https://img.shields.io/badge/API_Status-Online-brightgreen?style=for-the-badge&logo=render)](https://issuetrackingsystem.onrender.com)
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
 [![Laravel](https://img.shields.io/badge/Laravel-11-FF2D20?style=for-the-badge&logo=laravel)](https://laravel.com/)
 
 An enterprise-grade, multi-role Issue & Project Management application engineered with a decoupled architecture (**React + Vite** frontend and **Laravel 11 REST API** backend). Built as a portfolio project demonstrating scalable full-stack software architecture, strict security boundaries, state-machine workflows, and modern UI/UX design patterns.
+
+---
+
+## 🌐 Live Demo
+
+🔗 **Explore Live Demo**: [https://issue-tracking-system-alpha.vercel.app](https://issue-tracking-system-alpha.vercel.app/)
+
+> [!IMPORTANT]  
+> **Render Cold Start Notice**: The backend API is hosted on Render's free tier, which spins down after 15 minutes of inactivity. When opening the live demo for the first time, please allow **30–50 seconds** for the backend server to wake up and respond.
 
 ---
 
